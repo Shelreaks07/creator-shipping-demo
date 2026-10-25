@@ -1,2 +1,46 @@
-# creator-shipping-demo
-GitHub 仓库的 **Description** 建议写：  > 基于海外达人合作场景设计的信息收集与管理原型，支持寄样表单、字段校验、访问码权限管理及数据导出。使用虚拟数据演示完整流程。  简短英文版也可以：  > A creator collaboration management prototype with shipping forms, field validation, role-based access demos, and CSV export.
+# Creator Shipping｜达人管理系统
+
+基于海外达人合作场景设计的信息收集与管理原型，支持寄样表单、字段校验、访问码权限流程及 CSV 导出。使用虚拟数据演示完整流程，尚未投入实际业务使用。
+
+## 功能
+
+- 达人填写：结构化收集收货信息与产品 SKU、颜色和尺码，提供示例填充及 SKU 图片指引。
+- 格式校验：必填项、邮箱、国际区号电话、部分国家邮编格式、SKU 语法及尺码选择。
+- 团队管理：记录查询、状态筛选、详情查看与 CSV 导出。
+- 权限演示：管理员可修改状态及管理同事访问码；只读成员可查看与导出。
+- 响应式布局：适配电脑与手机。
+
+## 体验方法
+
+直接打开 `index.html`，或部署到 GitHub Pages。
+
+团队管理使用以下公开演示码：
+
+| 身份 | 演示访问码 |
+|---|---|
+| 管理员 | DEMO-JENNY |
+| 同事只读 | DEMO-ANGELA |
+
+管理员登录后，可在“访问码管理”中创建、启用或停用同事演示码。
+
+## 部署到 GitHub Pages
+
+把 `index.html`、`app.js`、`styles.css`、`assets` 文件夹、`.nojekyll` 和本说明上传到仓库根目录。不要上传 ZIP 本身。
+
+在仓库 **Settings → Pages** 中，Source 选择 **Deploy from a branch**，Branch 选择 **main** 和 **/(root)**，点击 **Save**。发布成功后复制 Pages 页面显示的实际网址。
+
+## 原型边界
+
+数据仅保存在当前浏览器；浏览器禁止本地存储时回退为本页内存数据。不存在真实发货、库存核验、服务端数据库或跨设备同步。访问码是前端交互演示，不是真实安全认证；只应输入虚拟信息。
+
+## 产品思考
+
+业务痛点：私信收集收货与选品信息容易漏填 SKU、邮编等字段，造成重复确认。
+
+设计方案：通过结构化表单和提交前校验减少遗漏，以管理列表和角色权限串联完整处理流程。
+
+待验证指标：信息完整率、补充确认次数、单条记录处理耗时。当前没有实测业务成效。
+
+## 技术
+
+原生 HTML、CSS、JavaScript 与 localStorage，使用 GPT、Codex 辅助实现，无需安装依赖或编译。
